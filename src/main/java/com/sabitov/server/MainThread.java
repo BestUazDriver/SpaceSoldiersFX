@@ -90,7 +90,10 @@ public class MainThread implements Runnable {
 
     private void nextStep(Bullet bullet1, Bullet bullet2) {
         bullet1.setxPos(bullet1.getxPos() + 10);
+        bullet1.setyPos(bullet1.getyPos() + (bullet1.getxPos() - 400) * 0.005);
         bullet2.setxPos(bullet2.getxPos() - 10);
+        bullet2.setyPos(bullet2.getyPos() + (bullet1.getxPos() - 400) * 0.005);
+
 
         printWriter1.println("bx1:" + bullet1.getxPos());
         printWriter1.println("bx2:" + bullet2.getxPos());
@@ -131,6 +134,7 @@ public class MainThread implements Runnable {
                 printWriter1.write("go:You lose!");
             }
         }
+
     }
 
 
